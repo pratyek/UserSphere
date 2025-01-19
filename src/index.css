@@ -1,0 +1,43 @@
+/* index.css */
+
+/* Body Styling */
+body {
+  background-color: #f8f9fa; /* Light gray background for better contrast */
+  font-family: "Arial", sans-serif; /* Replace Bootstrap's default font */
+}
+
+/* Universal margin reset for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Link Styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Utility Classes for Global Use */
+.text-center {
+  text-align: center;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 20px;
+  margin: auto;
+}

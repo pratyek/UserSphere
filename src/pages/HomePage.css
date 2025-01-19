@@ -1,0 +1,11 @@
+/* Add spacing for search bar */
+.search-bar {
+    margin-bottom: 20px;
+  }
+  
+  /* Center align pagination */
+  .pagination {
+    margin-top: 30px;
+    justify-content: center;
+  }
+   
