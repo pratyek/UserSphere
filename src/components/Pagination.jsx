@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
-import { IoChevronBack, IoChevronForward } from "react-icons/io5"; // Arrow icons
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
-// Styled Components
 const PaginationWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -18,11 +17,11 @@ const ArrowButton = styled.button`
   color: ${(props) =>
     props.isDarkMode
       ? props.disabled
-        ? "#5a5a5a" // Greyed-out for disabled in dark mode
-        : "#ffffff" // White arrows for dark mode
+        ? "#5a5a5a"
+        : "#ffffff"
       : props.disabled
-      ? "#c8c8c8" // Greyed-out for disabled in light mode
-      : "#2c2c2c"}; // Dark arrows for light mode
+      ? "#c8c8c8" 
+      : "#2c2c2c"}; 
   font-size: 1.8rem;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   display: flex;
@@ -35,10 +34,10 @@ const ArrowButton = styled.button`
       props.isDarkMode
         ? props.disabled
           ? "#5a5a5a"
-          : "#cccccc" // Light grey hover effect in dark mode
+          : "#cccccc"
         : props.disabled
         ? "#c8c8c8"
-        : "#5a5a5a"}; // Slightly darker hover effect in light mode
+        : "#5a5a5a"}; 
     transform: ${(props) => (props.disabled ? "none" : "scale(1.2)")};
   }
 `;
@@ -52,12 +51,12 @@ const Dot = styled.div`
   width: 10px;
   height: 10px;
   border-radius: 50%; /* Circular dots */
-  background-color: ${(props) => (props.active ? "#5a5a5a" : "#ccc")}; /* Highlight active dot */
+  background-color: ${(props) => (props.active ? "#5a5a5a" : "#ccc")};
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: ${(props) => (props.active ? "#5a5a5a" : "#555")}; /* Slight hover effect */
+    background-color: ${(props) => (props.active ? "#5a5a5a" : "#555")}; 
   }
 `;
 
@@ -68,11 +67,10 @@ const Pagination = ({
   onPageChange,
   onSwipeNext,
   onSwipePrev,
-  isDarkMode, // Add isDarkMode prop
+  isDarkMode, 
 }) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  // Swipe Handlers
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => onSwipeNext(),
     onSwipedRight: () => onSwipePrev(),
@@ -82,16 +80,14 @@ const Pagination = ({
 
   return (
     <PaginationWrapper {...swipeHandlers}>
-      {/* Left Arrow */}
       <ArrowButton
-        isDarkMode={isDarkMode} // Pass isDarkMode to the arrow button
+        isDarkMode={isDarkMode} 
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
         <IoChevronBack />
       </ArrowButton>
 
-      {/* Dots */}
       <DotsContainer>
         {Array.from({ length: totalPages }).map((_, index) => (
           <Dot
@@ -102,9 +98,8 @@ const Pagination = ({
         ))}
       </DotsContainer>
 
-      {/* Right Arrow */}
       <ArrowButton
-        isDarkMode={isDarkMode} // Pass isDarkMode to the arrow button
+        isDarkMode={isDarkMode} 
         onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >

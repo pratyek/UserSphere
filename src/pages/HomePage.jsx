@@ -6,7 +6,6 @@ import Pagination from "../components/Pagination";
 import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
 
-// Styled Components
 const HomeContainer = styled.div`
   padding: 50px 20px;
   max-width: 1200px;
@@ -30,11 +29,11 @@ const CardGrid = styled.div`
 
 const PageContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-  grid-template-rows: auto auto; /* Ensure 2 rows */
-  gap: 20px; /* Spacing between cards */
-  width: 100%; /* Each page takes full width */
-  flex-shrink: 0; /* Prevent shrinking of pages */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto; 
+  gap: 20px;
+  width: 100%; 
+  flex-shrink: 0; 
   overflow: hidden;
   padding:20px;
 `;
@@ -46,7 +45,6 @@ const HomePage = ({ isDarkMode }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 4;
 
-  // Filter and Sort Users
   const filteredUsers = users
     .filter((user) =>
       user.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -57,16 +55,13 @@ const HomePage = ({ isDarkMode }) => {
         : b.name.localeCompare(a.name)
     );
 
-  // Total Pages Calculation
   const totalPages = Math.ceil(filteredUsers.length / usersPerPage);
 
-  // Divide Users into Pages
   const pages = [];
   for (let i = 0; i < filteredUsers.length; i += usersPerPage) {
     pages.push(filteredUsers.slice(i, i + usersPerPage));
   }
 
-  // Handle Page Change
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
@@ -79,7 +74,6 @@ const HomePage = ({ isDarkMode }) => {
     }
   };
 
-  // Swipe Handlers for Drag/Swipe Gesture
   const swipeHandlers = useSwipeable({
     onSwipedLeft: handleNextPage,
     onSwipedRight: handlePreviousPage,
@@ -99,7 +93,6 @@ const HomePage = ({ isDarkMode }) => {
         isDarkMode={isDarkMode}
       />
 
-      {/* Card Grid with Sliding Animation */}
       <CardGridWrapper {...swipeHandlers}>
         <CardGrid currentPage={currentPage}>
           {pages.map((page, pageIndex) => (
@@ -112,7 +105,6 @@ const HomePage = ({ isDarkMode }) => {
         </CardGrid>
       </CardGridWrapper>
 
-      {/* Pagination */}
       <Pagination
         totalItems={filteredUsers.length}
         itemsPerPage={usersPerPage}

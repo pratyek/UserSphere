@@ -5,7 +5,7 @@ const Logo = ({ color }) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
-      fill={color} // Dynamically set the fill color
+      fill={color} 
       className="logo-svg"
     >
       <circle cx="50" cy="50" r="48" stroke={color} strokeWidth="4" fill="none" />

@@ -2,33 +2,32 @@ import React, { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import styled from "styled-components";
-import { IoArrowBackSharp } from "react-icons/io5"; // Import Back Arrow Icon
+import { IoArrowBackSharp } from "react-icons/io5"; 
 
-// Styled Components
 const DetailContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 85vh; /* Full height to match global background */
-  color: ${(props) => props.isDarkMode ? "#ffffff" : "#121212"}; /* Dynamic font color */
-  padding: 20px; /* Ensure proper spacing on smaller screens */
-  transition: all 0.3s ease; /* Smooth transition for theme changes */
+  height: 85vh; 
+  color: ${(props) => props.isDarkMode ? "#ffffff" : "#121212"}; 
+  padding: 20px;
+  transition: all 0.3s ease;
 `;
 
 const DetailCard = styled.div`
   background: ${(props) =>
     props.isDarkMode
-      ? "linear-gradient(135deg, #1e1e1e, #2c2c2c)" /* Dark mode card gradient */
-      : "linear-gradient(135deg, #e5e5e5, #d6d6d6, #c8c8c8)"}; /* Light mode card gradient */
-  color: ${(props) => (props.isDarkMode ? "#e0e0e0" : "#121212")}; /* Dynamic font color */
+      ? "linear-gradient(135deg, #1e1e1e, #2c2c2c)" 
+      : "linear-gradient(135deg, #e5e5e5, #d6d6d6, #c8c8c8)"};
+  color: ${(props) => (props.isDarkMode ? "#e0e0e0" : "#121212")}; 
   padding: 40px;
   border-radius: 15px;
   border: ${(props) =>
-    props.isDarkMode ? "1px solid #5a5a5a" : "1px solid #000000"}; /* Dynamic border */
+    props.isDarkMode ? "1px solid #5a5a5a" : "1px solid #000000"}; 
   box-shadow: ${(props) =>
     props.isDarkMode
-      ? "0px 6px 16px rgba(0, 0, 0, 0.5)" /* Dark mode shadow */
-      : "0px 6px 16px rgba(200, 200, 200, 0.5)"}; /* Light mode shadow */
+      ? "0px 6px 16px rgba(0, 0, 0, 0.5)" 
+      : "0px 6px 16px rgba(200, 200, 200, 0.5)"}; 
   max-width: 700px;
   width: 100%;
   text-align: left;
@@ -43,7 +42,7 @@ const BackButton = styled.button`
   border: none;
   font-size: 1.8rem;
   padding: 10px;
-  color: ${(props) => (props.isDarkMode ? "#ffffff" : "#121212")}; /* Dynamic color */
+  color: ${(props) => (props.isDarkMode ? "#ffffff" : "#121212")};
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -51,7 +50,7 @@ const BackButton = styled.button`
   transition: transform 0.3s ease, color 0.3s ease;
 
   &:hover {
-    color: ${(props) => (props.isDarkMode ? "#5a5a5a" : "#808080")}; /* Hover color */
+    color: ${(props) => (props.isDarkMode ? "#5a5a5a" : "#808080")}; 
     transform: scale(1.1);
   }
 `;
@@ -67,7 +66,7 @@ const CardDetail = styled.p`
   margin-bottom: 15px;
   font-size: 1.2rem;
   line-height: 1.6;
-  color: ${(props) => (props.isDarkMode ? "#e0e0e0" : "#121212")}; /* Dynamic font color */
+  color: ${(props) => (props.isDarkMode ? "#e0e0e0" : "#121212")}; 
 `;
 
 const BoldLabel = styled.span`

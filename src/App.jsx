@@ -4,10 +4,10 @@ import HomePage from "./pages/HomePage";
 import UserDetailPage from "./pages/UserDetailPage";
 import { UserProvider } from "./context/UserContext";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import { IoMoon, IoSunny } from "react-icons/io5"; // Icons for Dark/Light Mode
-import Logo from "./components/logo"; // Your reusable Logo component
+import { IoMoon, IoSunny } from "react-icons/io5"; 
+import Logo from "./components/logo"; 
 
-// Global Styles
+
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -20,19 +20,18 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// Light and Dark Mode Themes
+
 const lightTheme = {
   background:
-    "linear-gradient(135deg, #e5e5e5, #d6d6d6, #c8c8c8)", // Light gradient with darker shades
-  color: "#121212", // Dark font color for light mode
+    "linear-gradient(135deg, #e5e5e5, #d6d6d6, #c8c8c8)", 
+  color: "#121212", 
 };
 
 const darkTheme = {
-  background: "linear-gradient(135deg, #121212, #1f1f1f, #2c2c2c)", // Dark gradient
-  color: "#ffffff", // Light font color for dark mode
+  background: "linear-gradient(135deg, #121212, #1f1f1f, #2c2c2c)", 
+  color: "#ffffff", 
 };
 
-// Styled Components
 const AppContainer = styled.div`
   min-height: 100vh;
   display: flex;
@@ -82,9 +81,9 @@ const ThemeToggle = styled.div`
 `;
 
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true); // State for theme toggle
+  const [isDarkMode, setIsDarkMode] = useState(true); 
 
-  // Toggle Dark/Light Mode
+  
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
@@ -95,10 +94,8 @@ const App = () => {
         <GlobalStyle />
         <AppContainer>
           <Router>
-            {/* Header */}
             <Header>
               <LogoContainer to="/">
-                {/* Use Logo Component and Pass Theme-Based Color */}
                 <Logo color={isDarkMode ? "white" : "black"} />
               </LogoContainer>
               <Title>User-Sphere</Title>
@@ -107,15 +104,14 @@ const App = () => {
               </ThemeToggle>
             </Header>
 
-            {/* Routes */}
             <Routes>
               <Route
                 path="/"
-                element={<HomePage isDarkMode={isDarkMode} />} // Pass isDarkMode to HomePage
+                element={<HomePage isDarkMode={isDarkMode} />} 
               />
               <Route
                 path="/user/:id"
-                element={<UserDetailPage isDarkMode={isDarkMode} />} // Pass isDarkMode to UserDetailPage
+                element={<UserDetailPage isDarkMode={isDarkMode} />} 
               />
             </Routes>
           </Router>

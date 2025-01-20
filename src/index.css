@@ -1,16 +1,9 @@
-/* index.css */
 
-
-/* Universal margin reset for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  height:100vh;
-}
-/* Link Styling */
 a {
   text-decoration: none;
   color: inherit;
@@ -20,7 +13,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Utility Classes for Global Use */
 .text-center {
   text-align: center;
 }
