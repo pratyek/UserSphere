@@ -1,10 +1,5 @@
 /* index.css */
 
-/* Body Styling */
-body {
-  background-color: #f8f9fa; /* Light gray background for better contrast */
-  font-family: "Arial", sans-serif; /* Replace Bootstrap's default font */
-}
 
 /* Universal margin reset for all elements */
 * {
@@ -12,7 +7,9 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  height:100vh;
+}
 /* Link Styling */
 a {
   text-decoration: none;
