@@ -1,5 +1,6 @@
-# User-Sphere 🌐 (deployed https://bejewelled-pithivier-d2ec18.netlify.app/ )
+# User-Sphere 🌐 
 
+(deployed https://bejewelled-pithivier-d2ec18.netlify.app/ )
 Welcome to **User-Sphere**, a React.js application that showcases a list of users fetched from an API. This project demonstrates modern React features like **functional components**, **context API for state management**, **routing with React Router**, and **dark/light mode toggling**. It's designed to be responsive and user-friendly.
 
 ---
